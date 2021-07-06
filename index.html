@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlord Character Tracker</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>Character Sheet</li>
+          <li>Backpack</li>
+          <li>Spell List</li>
+          <li>Minions</li>
+          <li>Notes</li>
+        </ul>
+      </nav>
+      <div id="basicInfo">
+        <div id="charInfo">
+          <p>Name:</p>
+          <p>Class:</p>
+          <p>Subclass:</p>
+          <p>Race:</p>
+          <p>Subrace:</p>
+        </div>
+        <div id="lvlInfo">
+          <button id="lvlUp">+</button>
+          <p id="lvlText">LvL</p>
+          <p id="lvlDisp">1</p>
+          <button id="lvlDown">-</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="colOne">
+        <div id="healthInfo">
+          <div id="hitDiceInfo">
+            <p>1d10</p>
+            <div id="currentHitDiceInfo">
+              <button id="hitDiceDown">-</button>
+              <p id="currentHitDice">1</p>
+              <button id="hitDiceUp">+</button>
+            </div>
+          </div>
+          <div id="hpInfo">
+            <p id="maxHP">Max HP:</p>
+            <div id="currentHPInfo">
+              <button id="currentHPDown">-</button>
+              <input
+                type="text"
+                name="currentHP"
+                id="currentHP"
+                placeholder="10"
+              />
+              <button id="currentHPUp">+</button>
+            </div>
+          </div>
+        </div>
+        <div id="statsInfo">
+          <div id="strength">
+            <div class="statNumber">
+              <button class="statDown" data-stat="strength">-</button>
+              <input
+                type="text"
+                name="strengthStat"
+                id="strengthStat"
+                data-stat="strength"
+              />
+              <button class="statUp" data-stat="strength">+</button>
+            </div>
+            <div class="modifierNumber" id="strMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">STR</p>
+          </div>
+          <div id="dexterity">
+            <div class="statNumber">
+              <button class="statDown" data-stat="dexterity">-</button>
+              <input
+                type="text"
+                name="dexterityStat"
+                id="dexterityStat"
+                data-stat="dexterity"
+              />
+              <button class="statUp" data-stat="dexterity">+</button>
+            </div>
+            <div class="modifierNumber" id="dexMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">DEX</p>
+          </div>
+          <div id="constitution">
+            <div class="statNumber">
+              <button class="statDown" data-stat="constitution">-</button>
+              <input
+                type="text"
+                name="constitutionStat"
+                id="constitutionStat"
+                data-stat="constitution"
+              />
+              <button class="statUp" data-stat="constitution">+</button>
+            </div>
+            <div class="modifierNumber" id="conMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">CON</p>
+          </div>
+          <div id="intelligence">
+            <div class="statNumber">
+              <button class="statDown" data-stat="intelligence">-</button>
+              <input
+                type="text"
+                name="intelligenceStat"
+                id="intelligenceStat"
+                data-stat="intelligence"
+              />
+              <button class="statUp" data-stat="intelligence">+</button>
+            </div>
+            <div class="modifierNumber" id="intMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">INT</p>
+          </div>
+          <div id="wisdom">
+            <div class="statNumber">
+              <button class="statDown" data-stat="wisdom">-</button>
+              <input
+                type="text"
+                name="wisdomStat"
+                id="wisdomStat"
+                data-stat="wisdom"
+              />
+              <button class="statUp" data-stat="wisdom">+</button>
+            </div>
+            <div class="modifierNumber" id="wisMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">WIS</p>
+          </div>
+          <div id="charisma">
+            <div class="statNumber">
+              <button class="statDown" data-stat="charisma">-</button>
+              <input
+                type="text"
+                name="charismaStat"
+                id="charismaStat"
+                data-stat="charisma"
+              />
+              <button class="statUp" data-stat="charisma">+</button>
+            </div>
+            <div class="modifierNumber" id="chaMod">
+              <p>+0</p>
+            </div>
+            <p class="statName">CHA</p>
+          </div>
+        </div>
+      </div>
+      <div id="colTwo">
+        <div id="combatStats">
+          <div class="combatStat" id="speed">
+            <p>Speed</p>
+            <input type="text" name="speed" id="speedDisp" placeholder="30" />
+            <p>ft</p>
+          </div>
+          <div class="combatStat" id="ac">
+            <p>AC</p>
+            <input type="text" name="ac" id="acDisp" placeholder="10" />
+          </div>
+          <div class="combatStat" id="Proficiency">
+            <p>Proficiency</p>
+            <input
+              type="text"
+              name="proficiency"
+              id="profDisp"
+              placeholder="+3"
+            />
+          </div>
+          <div class="combatStat" id="Inspiration">
+            <p>Speed</p>
+            <button id="inspDown">-</button>
+            <input type="text" name="speed" id="speedDisp" placeholder="0" />
+            <button id="inspUp">+</button>
+          </div>
+        </div>
+        <div id="deathThrows">
+          <div id="deathSaveInfo">
+            <p>Death Save Saves</p>
+            <input type="checkbox" name="deathSaveOne" id="deathSaveOne" />
+            <input type="checkbox" name="deathSaveTwo" id="deathSaveTwo" />
+            <input type="checkbox" name="deathSaveThree" id="deathSaveThree" />
+          </div>
+          <div id="deathFailInfo">
+            <p>Death Save Fails</p>
+            <input type="checkbox" name="deathFailOne" id="deathFailOne" />
+            <input type="checkbox" name="deathFailTwo" id="deathFailTwo" />
+            <input type="checkbox" name="deathFailThree" id="deathFailThree" />
+          </div>
+        </div>
+        <div id="skillsInfo">
+          <div id="strengthSkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="strSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+                <p
+                  id="athletics"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Athletics
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="strSaveMod">[ +0 ]</p>
+                <p id="athleticsMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div id="dexteritySkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="dexSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+                <p
+                  id="acrobatics"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Acrobatics
+                </p>
+                <p id="sleight" data-proficiency="false" data-expertise="false">
+                  Sleight of Hand
+                </p>
+                <p id="stealth" data-proficiency="false" data-expertise="false">
+                  Stealth
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="dexSaveMod">[ +0 ]</p>
+                <p id="acrobaticsMod">[ +0 ]</p>
+                <p id="sleightMod">[ +0 ]</p>
+                <p id="stealthMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div id="constitutionSkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="conSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="conSaveMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div id="intelligenceSkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="intSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+                <p id="arcana" data-proficiency="false" data-expertise="false">
+                  Arcana
+                </p>
+                <p id="history" data-proficiency="false" data-expertise="false">
+                  History
+                </p>
+                <p
+                  id="investigation"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Investigation
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="strSaveMod">[ +0 ]</p>
+                <p id="arcanaMod">[ +0 ]</p>
+                <p id="historyMod">[ +0 ]</p>
+                <p id="investigationMod">[ +0 ]</p>
+              </div>
+            </div>
+            <div class="skillRight">
+              <div class="skillNames">
+                <p id="nature" data-proficiency="false" data-expertise="false">
+                  Nature
+                </p>
+                <p
+                  id="religion"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Religion
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="natureMod">[ +0 ]</p>
+                <p id="religionMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div id="wisdomSkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="wisSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+                <p id="animal" data-proficiency="false" data-expertise="false">
+                  Animal Handling
+                </p>
+                <p id="insight" data-proficiency="false" data-expertise="false">
+                  Insight
+                </p>
+                <p
+                  id="medicine"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Medicine
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="wisSaveMod">[ +0 ]</p>
+                <p id="animalMod">[ +0 ]</p>
+                <p id="insightMod">[ +0 ]</p>
+                <p id="medicineMod">[ +0 ]</p>
+              </div>
+            </div>
+            <div class="skillRight">
+              <div class="skillNames">
+                <p
+                  id="perception"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Perception
+                </p>
+                <p
+                  id="survival"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Survival
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="perceptionMod">[ +0 ]</p>
+                <p id="survivalMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+          <div id="charismaSkills">
+            <div class="skillLeft">
+              <div class="skillNames">
+                <p id="chaSave" data-proficiency="false" data-expertise="false">
+                  Save <br />
+                </p>
+                <p
+                  id="deception"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Deception
+                </p>
+                <p
+                  id="intimidation"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Intimidation
+                </p>
+                <p
+                  id="performance"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Performance
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="chaSaveMod">[ +0 ]</p>
+                <p id="deceptionMod">[ +0 ]</p>
+                <p id="intimidationMod">[ +0 ]</p>
+                <p id="performanceMod">[ +0 ]</p>
+              </div>
+            </div>
+            <div class="skillRight">
+              <div class="skillNames">
+                <p
+                  id="persuasion"
+                  data-proficiency="false"
+                  data-expertise="false"
+                >
+                  Persuasion
+                </p>
+              </div>
+              <div class="skillMods">
+                <p id="persuasionMod">[ +0 ]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="colThree">
+        <div id="weaponInfo">
+          <div id="weaponHeaders">
+            <h2>Weapons</h2>
+            <h2>Mod</h2>
+            <h2>Damage</h2>
+          </div>
+          <div class="weaponArea">
+            <p class="weaponName">Name</p>
+            <p class="weaponToHit">+0</p>
+            <p class="weaponDmg">1d10+0 Light</p>
+          </div>
+          <div class="weaponArea">
+            <p class="weaponName">Name</p>
+            <p class="weaponToHit">+0</p>
+            <p class="weaponDmg">1d10+0 Light</p>
+          </div>
+          <div class="weaponArea">
+            <p class="weaponName">Name</p>
+            <p class="weaponToHit">+0</p>
+            <p class="weaponDmg">1d10+0 Lights</p>
+          </div>
+        </div>
+        <div id="spellArea">
+          <div id="spellSlotArea">
+            <div id="standardSpells">
+              <div id="slotLvl">
+                <button id="spellSlotLvlDown" data-min-value="1">-</button>
+                <input type="text" name="spellSlotLvl" id="spellSlotLvl" />
+                <button id="spellSlotLvlUp" data-max-value="5">+</button>
+              </div>
+              <div id="slotArea">
+                <input type="checkbox" name="slotOne" id="slotOne" />
+                <input type="checkbox" name="slotTwo" id="slotTwo" />
+                <input type="checkbox" name="slotThree" id="slotThree" />
+                <input type="checkbox" name="slotFour" id="slotFour" />
+              </div>
+            </div>
+            <div id="mysticArcanum">
+              <div class="arcanumSlot">
+                <p class="arcanumName">Name:</p>
+                <p class="arcanumDesc" data-hidden="true">Description:</p>
+                <p class="arcanumLvl" data-level="6">Level:</p>
+                <input type="checkbox" name="arcanumUsed" id="arcanumSix" />
+              </div>
+              <div class="arcanumSlot">
+                <p class="arcanumName">Name:</p>
+                <p class="arcanumDesc" data-hidden="true">Description:</p>
+                <p class="arcanumLvl" data-level="7">Level:</p>
+                <input type="checkbox" name="arcanumUsed" id="arcanumSeven" />
+              </div>
+              <div class="arcanumSlot">
+                <p class="arcanumName">Name:</p>
+                <p class="arcanumDesc" data-hidden="true">Description:</p>
+                <p class="arcanumLvl" data-level="8">Level:</p>
+                <input type="checkbox" name="arcanumUsed" id="arcanumEight" />
+              </div>
+              <div class="arcanumSlot">
+                <p class="arcanumName">Name:</p>
+                <p class="arcanumDesc" data-hidden="true">Description:</p>
+                <p class="arcanumLvl" data-level="9">Level:</p>
+                <input type="checkbox" name="arcanumUsed" id="arcanumNine" />
+              </div>
+            </div>
+            <div id="spellList">
+              <div id="learnedSpells">
+                <div id="learnedHeader">
+                  <p class="headerDesc">
+                    Learned Spells: Spells from your class
+                  </p>
+                  <p class="headerLvl">LvL</p>
+                  <p class="headerSpell">Spell</p>
+                </div>
+                <div id="learnedList">
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual1" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual2" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual3" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual4" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual5" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual6" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual7" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual8" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual9" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual10" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual11" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual12" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual13" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual14" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual15" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                </div>
+              </div>
+              <div id="innateSpells">
+                <input type="checkbox" name="ritual" id="ritual15" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual16" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual17" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual18" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual19" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual20" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual21" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual22" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual23" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual124" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual25" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual26" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual27" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual28" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual29" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+                  <div class="listSlot">
+                    <input type="checkbox" name="ritual" id="ritual30" />
+                    <p class="listLvl">Lvl</p>
+                    <p class="listName">Spell name</p>
+                    <p class="listDesc" data-hidden="true">Spell Description</p>
+                    <p class="ritualSpell">Ritual Spell</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='colFour'>
+        <div id='classFeatures'>
+
+        </div>
+        <div id='characterTraits'>
+
+        </div>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
