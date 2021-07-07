@@ -1,0 +1,32 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 9%;
+  background-color: lightgray;
+}
+
+.copyrightSection {
+  width: 40%;
+  line-height: 0.7;
+  font-size: 15px;
+  margin: 10px;
+  margin-left: 60px;
+}
+
+.aboutArea {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 200px;
+  line-height: 1;
+}
+
+.aboutArea a {
+  color: black;
+}
+
+.aboutArea a:hover {
+  color: red;
+}
