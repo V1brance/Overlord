@@ -1,8 +1,21 @@
+import React, { useState } from "react";
+
 import styles from "./login.module.css";
 import sword from "../../public/images/login-sword.png";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Login() {
+const Login = (props) => {
+  const [state, setState] = useState({ loginUser: "", loginPass: "" });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+
   return (
     <>
       <div className={styles.formArea}>
@@ -13,21 +26,30 @@ export default function Login() {
             type="text"
             name="loginUser"
             id="loginUser"
-            class={styles.userInput}
+            className={styles.userInput}
             placeholder="Username"
+            onChange={handleChange}
           />
           <input
             type="password"
             name="loginPass"
             id="loginPass"
-            class={styles.passInput}
+            className={styles.passInput}
             placeholder="Password"
+            onChange={handleChange}
           />
           <button type="submit" className={styles.submitButton}>
-            Submit
+            Login
           </button>
+          <Link href="/newUser">
+            <a className={styles.newUserLink}>
+              Need to make an account? Click here!
+            </a>
+          </Link>
         </form>
       </div>
     </>
   );
-}
+};
+
+export default Login;

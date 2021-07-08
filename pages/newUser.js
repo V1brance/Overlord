@@ -2,15 +2,15 @@
 
 // Change Login to CreateUser
 
-import Login from "../components/login/login";
+import CreateUser from "../components/createUser/createUser";
 import Header from "../components/global/header";
 import Footer from "../components/global/footer";
 
-export default function UserLogin() {
+export default function newUser() {
   return (
     <main>
       <Header />
-      <Login />
+      <CreateUser />
       <Footer />
     </main>
   );

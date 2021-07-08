@@ -7,7 +7,7 @@
   margin-top: -60px;
 }
 
-.loginHeader {
+.createHeader {
   text-align: center;
   width: 40%;
   margin-top: -10px;
@@ -15,17 +15,18 @@
   border-bottom: 5px solid goldenrod;
 }
 
-.loginForm {
+.createForm {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
 .userInput,
-.passInput {
+.passInput,
+.emailInput {
   width: 50%;
   height: 40px;
-  margin: 30px auto;
+  margin: 15px auto;
   border: 2px black solid;
   border-radius: 6px;
   font-size: 20px;
@@ -51,13 +52,19 @@
   border: 3px solid goldenrod;
 }
 
-.newUserLink {
+.loginLink {
   color: black;
   text-decoration: none;
   text-align: center;
   margin-top: 20px;
 }
 
-.newUserLink:hover {
+.loginLink:hover {
   color: goldenrod;
+}
+
+.emailConfirm {
+  text-align: center;
+  font-size: 14px;
+  margin-top: -1px;
 }

@@ -1,7 +1,5 @@
 import styles from "./header.module.css";
 import Link from "next/link";
-import Image from "next/image";
-import dice from "../../public/images/home-d20.png";
 
 export default function Header() {
   return (
@@ -25,6 +23,9 @@ export default function Header() {
         <li className={styles.loginButton}>
           <Link href="/login">
             <a>Login</a>
+          </Link>
+          <Link href="/newUser">
+            <a>Create</a>
           </Link>
         </li>
       </ul>
