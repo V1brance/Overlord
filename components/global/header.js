@@ -10,7 +10,7 @@ export default function Header() {
             <a>Home</a>
           </Link>
         </li>
-        <li className={styles.navLink}>
+        {/* <li className={styles.navLink}>
           <Link href="/">
             <a>Characters</a>
           </Link>
@@ -19,7 +19,7 @@ export default function Header() {
           <Link href="/">
             <a>Campaigns</a>
           </Link>
-        </li>
+        </li> */}
         <li className={styles.loginButton}>
           <Link href="/login">
             <a>Login</a>

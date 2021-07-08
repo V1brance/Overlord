@@ -47,7 +47,7 @@ const CreateUser = (props) => {
             className={styles.emailInput}
             placeholder="Confirm Email"
           />
-          <label for="createEmailConfirm" className={styles.emailConfirm}>
+          <label htmlFor="createEmailConfirm" className={styles.emailConfirm}>
             This is just for password reset purposes. I won't annoy you.
           </label>
           <button type="submit" className={styles.submitButton}>
