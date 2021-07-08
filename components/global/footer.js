@@ -1,5 +1,7 @@
 import styles from "./footer.module.css";
 import Link from "next/link";
+import dice from "../../public/images/home-d20.png";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -8,6 +10,9 @@ export default function Footer() {
         <p>©2021 Samuel Brookshire</p>
         <p>All Rights Reserved</p>
         <p>Don't steal my work please!</p>
+      </div>
+      <div className={styles.dice}>
+        <Image src={dice} width={80} height={80} alt="A d20"></Image>
       </div>
       <div className={styles.aboutArea}>
         <p>Contact Me:</p>

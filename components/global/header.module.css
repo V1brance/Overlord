@@ -4,7 +4,7 @@
   margin-left: 5%;
   list-style: none;
   padding-bottom: 20px;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid goldenrod;
 }
 
 .navLink {
@@ -16,12 +16,12 @@
   text-decoration: none;
   color: black;
   margin: 30px;
+  font-size: 24px;
 }
 
 .navLink a:hover,
 .loginButton a:hover {
-  text-decoration: underline;
-  color: red;
+  color: goldenrod;
 }
 
 .loginButton {
