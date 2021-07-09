@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS overlord_db;
+CREATE DATABASE overlord_db;
