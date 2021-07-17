@@ -1,0 +1,97 @@
+.topBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.healthArea {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  width: 300px;
+  margin-left: 35px;
+  justify-content: center;
+}
+
+.hitDiceArea,
+.hitPointArea {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.hitDiceArea p,
+.hitPointArea p {
+  padding: none;
+  margin: 0;
+}
+
+.currentChanger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  justify-content: center;
+  margin-top: 13px;
+}
+
+.currentChanger button {
+  border: none;
+  background-color: goldenrod;
+  padding: 11px 10px;
+  color: black;
+  height: 100%;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.currentHitDice,
+.currentHitPoints {
+  padding: 5px 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.leftButton {
+  border-radius: 8px 0px 0px 8px;
+}
+
+.rightButton {
+  border-radius: 0px 8px 8px 0px;
+}
+
+.hidden {
+  display: none;
+}
+
+.combatStats {
+  margin-left: 55px;
+}
+
+.showSpeeds {
+  background-color: lightgray;
+  color: black;
+  font-size: 14px;
+  border-radius: 12px;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  padding: 0 1px;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.showSpeeds p {
+  margin: 0;
+}
+
+.visibleArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
