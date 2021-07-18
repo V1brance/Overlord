@@ -10,16 +10,11 @@ export default function Header() {
             <a>Home</a>
           </Link>
         </li>
-        {/* <li className={styles.navLink}>
-          <Link href="/">
-            <a>Characters</a>
+        <li className={styles.navLink}>
+          <Link href="/player">
+            <a>Character</a>
           </Link>
         </li>
-        <li className={styles.navLink}>
-          <Link href="/">
-            <a>Campaigns</a>
-          </Link>
-        </li> */}
         <li className={styles.loginButton}>
           <Link href="/login">
             <a>Login</a>

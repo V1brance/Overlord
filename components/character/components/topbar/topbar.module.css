@@ -71,6 +71,10 @@
 
 .combatStats {
   margin-left: 55px;
+  display: flex;
+  flex-direction: row;
+
+  padding: 10px;
 }
 
 .showSpeeds {
@@ -83,7 +87,7 @@
   height: 20px;
   padding: 0 1px;
   font-weight: bold;
-  margin-left: 3px;
+  margin-left: 5px;
 }
 
 .showSpeeds p {
@@ -94,4 +98,33 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.hiddenMovement {
+  margin: 0;
+  font-size: 15px;
+  z-index: 1;
+}
+
+.hiddenArea {
+  background-color: white;
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 6px 18px;
+  margin-top: -15px;
+  margin-left: 20px;
+  position: absolute;
+  box-shadow: 5px 5px 10px goldenrod;
+}
+
+.armorArea,
+.profArea,
+.visibleArea {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.armorArea p,
+.profArea p {
+  margin: 0;
 }
