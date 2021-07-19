@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 60px;
+  margin-left: 60px;
 }
 
 .healthArea {
@@ -28,6 +29,10 @@
 .hitPointArea p {
   padding: none;
   margin: 0;
+}
+
+.totalLabels {
+  border-bottom: 1px black solid;
 }
 
 .currentChanger {
@@ -119,12 +124,37 @@
 
 .armorArea,
 .profArea,
-.visibleArea {
+.visibleArea,
+.inspArea {
   text-align: center;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .armorArea p,
 .profArea p {
   margin: 0;
+}
+
+.inspArea p {
+  margin: 0;
+}
+
+.inspChanger {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid goldenrod;
+  border-radius: 5px;
+}
+
+.inspButton {
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.inspChanger p {
+  margin: 0 7px;
 }

@@ -5,6 +5,7 @@ export default function Topbar() {
   const [hitDice, setHitDice] = useState(12);
   const [hitPoints, setHitPoints] = useState(80);
   const [hiddenSpeeds, setHiddenSpeeds] = useState(true);
+  const [inspiration, setInspiration] = useState(2);
 
   const maxHitDice = 12;
   const maxHitPoints = 80;
@@ -27,11 +28,20 @@ export default function Topbar() {
     }
   }
 
-  function handleSpeedDisplay() {
+  function handleInspiration(event) {
+    const button = event.target;
+    if (button.innerHTML == "+") {
+      setInspiration(inspiration + 1);
+    } else {
+      setInspiration(inspiration - 1);
+    }
+  }
+
+  function handleMouseIn() {
     setHiddenSpeeds(false);
   }
 
-  function handleSpeedHide() {
+  function handleMouseOut() {
     setHiddenSpeeds(true);
   }
 
@@ -79,7 +89,7 @@ export default function Topbar() {
     <div className={styles.topBar}>
       <div className={styles.healthArea}>
         <div className={styles.hitDiceArea}>
-          <p className="totalHitDice">{maxHitDice}d8</p>
+          <p className={styles.totalLabels}>Max {maxHitDice}d8</p>
           <p className="currentDiceLabel">Hit Dice</p>
           <div className={styles.currentChanger}>
             <button className={styles.leftButton} onClick={handleHitDice}>
@@ -92,7 +102,7 @@ export default function Topbar() {
           </div>
         </div>
         <div className={styles.hitPointArea}>
-          <p className="totalHitDice">Max HP: {maxHitPoints}</p>
+          <p className={styles.totalLabels}>Max {maxHitPoints} HP</p>
           <p className="currentDiceLabel">HP</p>
           <div className={styles.currentChanger}>
             <button className={styles.leftButton} onClick={handleHitPoints}>
@@ -113,8 +123,8 @@ export default function Topbar() {
             </p>
             <div
               className={styles.showSpeeds}
-              onMouseEnter={handleSpeedDisplay}
-              onMouseLeave={handleSpeedHide}
+              onMouseEnter={handleMouseIn}
+              onMouseLeave={handleMouseOut}
             >
               <p>i</p>
             </div>
@@ -128,6 +138,18 @@ export default function Topbar() {
         <div className={styles.profArea}>
           <p>Proficiency</p>
           <p>+3</p>
+        </div>
+        <div className={styles.inspArea}>
+          <p>Inspiration</p>
+          <div className={styles.inspChanger}>
+            <button className={styles.inspButton} onClick={handleInspiration}>
+              -
+            </button>
+            <p>{inspiration}</p>
+            <button className={styles.inspButton} onClick={handleInspiration}>
+              +
+            </button>
+          </div>
         </div>
       </div>
     </div>
