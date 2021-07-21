@@ -1,0 +1,71 @@
+.stats {
+  margin-left: 60px;
+  padding: 20px 30px;
+  background-color: black;
+  width: 350px;
+  margin-top: 50px;
+  align-items: center;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px goldenrod;
+}
+
+.stats * {
+  color: white;
+  font-weight: bold;
+}
+
+.statArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.statNumber {
+  font-size: 30px;
+  padding: 10px 15px;
+  background-color: white;
+  color: black;
+  margin-top: 0px;
+}
+
+.statMod,
+.statName {
+  font-size: 25px;
+}
+
+.statChanger {
+  display: flex;
+  flex-direction: row;
+}
+
+.statDisplay {
+  width: 100px;
+  text-align: center;
+  margin-bottom: 25px;
+  height: 80px;
+}
+
+.statDisplay p {
+  margin: 0;
+  background-color: white;
+  color: black;
+  height: 50%;
+  padding-top: 2px;
+  font-size: 25px;
+}
+
+.statButton {
+  width: 30px;
+  height: 80px;
+  background-color: white;
+  color: black;
+  border: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* Should be at the bottom of the document */
+.hidden {
+  display: none;
+}
