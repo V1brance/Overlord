@@ -1,0 +1,6 @@
+.charInfo {
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  margin: auto;
+}

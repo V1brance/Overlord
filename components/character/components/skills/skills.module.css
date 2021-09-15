@@ -1,0 +1,54 @@
+.skillArea {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-left: 60px;
+}
+
+.statSkillArea,
+.strSkills,
+.dexSkills {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid goldenrod;
+  height: 200px;
+}
+
+.statDisp {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  align-items: center;
+  margin: 0px 10px;
+  height: 48px;
+}
+
+.profMod {
+  margin-right: 19px;
+}
+
+.skillMod {
+  margin-right: 15px;
+}
+
+.strSkills,
+.dexSkills {
+  height: 100px;
+}
+
+.statLabel {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px 20px;
+}
+
+.areaLabel {
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 35px;
+  margin: 0;
+  padding: 0;
+}
