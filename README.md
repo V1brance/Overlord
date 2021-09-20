@@ -1,34 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Overlord Sheets
 
-## Getting Started
+Overlord Sheets is a comprehensive redesign of character sheets of old. The aim is to create an experience like that of OrcPub with perhaps a little more legal compliance. Currently, this project is in early, pre-alpha development. If you wish to support the project please consider supporting me on Patreon(linked below)!
 
-First, run the development server:
+Below is the current roadmap of the project. Currently, I estimate an alpha v1.0 dpeloyment in December of this year however this will be adjusted as necessary. I am a fairly green developer and thus my roadmap may not always be accurate and is definitely subject to change.
 
-```bash
-npm run dev
-# or
-yarn dev
+This app was bootstrapped with
+
+```
+npx create-next-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+and is built using Next.JS and Node.JS. If you download this code and wish to demo the site on your own machine
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+and navigate to http://localhost:3000 by default. Note that this functionality will be disabled upon completion of database linking and much of the site functionality will break unless you seed and manage your own local database.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Roadmap
 
-## Learn More
+## Front End Design
 
-To learn more about Next.js, take a look at the following resources:
+### Character Sheet Visuals v1.0
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- basic combat stats: 100%
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- stats: 90% [Animation rework pending]
 
-## Deploy on Vercel
+- skill components: 50% [Pending completion on functionality]
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- spell component: 0%
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- equipment component 0%
+
+- feats component + racial traits 0%
+
+- class features 0%
+
+Currently: setting up a react-redux store, need some character stats to be available in a global state
+
+## Front End Functionality
+
+### Character Sheet Functionality v1.0
+
+#### Basic Combat Stats [Currently waiting on database functionality to continue]
+
+- Dynamic HP Track 75%
+- Dynamic Hit Dice Track 75%
+- Inspiration Track 75%
+
+---
+
+#### Stat Component
+
+- Click Animation 100% [potential rework incoming]
+- Stat mod update 75%
+
+---
+
+#### Skill Component
+
+- Proficiency/expertise affects mods 20% [working on redux store]
+- Auto update of modifiers 0% [pending work on redux store]
+
+---
+
+#### Spell Component 0%
+
+---
+
+#### Equipment Component 0%
+
+---
+
+#### Feats/Racial Traits Component 0%
+
+---
+
+#### Class Features 0%
+
+---
+
+## Database
+
+### User Storage
+
+- User Authentication 10%
+- DB Models
+- Password Encryption
+
+### Character Storage
+
+- Overall Model 5%
+- Backgrounds
+- Classes
+- Subclasses
+- Races
+- Equipment
+
+## Server
+
+- Basic Deployment 0%
