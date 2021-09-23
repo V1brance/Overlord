@@ -28,7 +28,7 @@ and navigate to http://localhost:3000 by default. Note that this functionality w
 
 - stats: 90% [Animation rework pending]
 
-- skill components: 50% [Pending completion on functionality]
+- skill components: 40% [Pending completion on functionality]
 
 - spell component: 0%
 
@@ -61,8 +61,8 @@ Currently: setting up a react-redux store, need some character stats to be avail
 
 #### Skill Component
 
-- Proficiency/expertise affects mods 20% [working on redux store]
-- Auto update of modifiers 0% [pending work on redux store]
+- Proficiency/expertise affects mods 80% [basic functionality implemented]
+- Auto update of modifiers 50% [breaks with prof updates]
 
 ---
 

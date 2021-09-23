@@ -2,7 +2,7 @@ import Stats from "./components/stats/stats";
 import Topbar from "./components/topbar/topbar";
 import Spells from "./components/spells/spells";
 import Weapons from "./components/weapons/weapons";
-import Skills from "./components/skills/skills";
+import Skills from "../../src/features/skillMods/skills/skills";
 
 import styles from "./character.module.css";
 

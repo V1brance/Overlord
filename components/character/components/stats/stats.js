@@ -1,26 +1,78 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+//import statements for the stat redux components
+import {
+  incrementCha,
+  selectChaMod,
+} from "../../../../src/features/skillMods/chaMod";
+import {
+  incrementCon,
+  selectConMod,
+} from "../../../../src/features/skillMods/conMod";
+import {
+  incrementDex,
+  selectDexMod,
+} from "../../../../src/features/skillMods/dexMod";
+import {
+  incrementInt,
+  selectIntMod,
+} from "../../../../src/features/skillMods/intMod";
+import {
+  incrementStr,
+  selectStrMod,
+} from "../../../../src/features/skillMods/strMod";
+import {
+  incrementWis,
+  selectWisMod,
+} from "../../../../src/features/skillMods/wisMod";
+
+//import statements for skills
+
 import styles from "./stats.module.css";
 
 export default function Stats() {
+  const dispatch = useDispatch();
+
+  //need to grab the current values from the redux store
+  const curStr = useSelector(selectStrMod);
+  const curDex = useSelector(selectDexMod);
+  const curCon = useSelector(selectConMod);
+  const curInt = useSelector(selectIntMod);
+  const curWis = useSelector(selectWisMod);
+  const curCha = useSelector(selectChaMod);
+
+  //the mod determines the animation component for changing the stat
+  //the stat component is the actual number associated with the stat
+  //the skill is the skill modifier
+  //str
   const [strMod, setStrMod] = useState(false);
   const [str, setStr] = useState(10);
   const [strSkill, setStrSkill] = useState(0);
+
+  //dex
   const [dexMod, setDexMod] = useState(false);
   const [dex, setDex] = useState(10);
   const [dexSkill, setDexSkill] = useState(0);
+  //con
   const [conMod, setConMod] = useState(false);
   const [con, setCon] = useState(10);
   const [conSkill, setConSkill] = useState(0);
+  //int
   const [intMod, setIntMod] = useState(false);
   const [int, setInt] = useState(10);
   const [intSkill, setIntSkill] = useState(0);
+  //wis
   const [wisMod, setWisMod] = useState(false);
   const [wis, setWis] = useState(10);
   const [wisSkill, setWisSkill] = useState(0);
+  //cha
   const [chaMod, setChaMod] = useState(false);
   const [cha, setCha] = useState(10);
   const [chaSkill, setChaSkill] = useState(0);
 
+  //variable definition for the sub components, probably should abstract
+  //this out further, potentially will rework this
   let strArea;
   let dexArea;
   let conArea;
@@ -28,8 +80,13 @@ export default function Stats() {
   let wisArea;
   let chaArea;
 
+  //handles the click event to toggle stat editing on
+  //eventually this will dispatch the database request
   function handleStatToggle(event) {
+    //check stat name from dom element
     const stat = event.target.getAttribute("name");
+
+    //switch on the grabbed stat
     switch (stat) {
       case "str":
         setStrMod(!strMod);
@@ -53,74 +110,121 @@ export default function Stats() {
   }
 
   function handleStat(event) {
+    //grab the name of the stat off the element
     const stat = event.target.getAttribute("name");
-    let ones = "";
+
+    //variable declarations
+    let ones;
     let mod;
     let skill;
+
+    //switch case on the stat we grabbed off the element
+    //rework in progress, trying to abstractify some of this
     switch (stat) {
+      //syntactically, these are all the same
+      //comments for one apply to them all, just switch the stat statements
       case "str":
+        //collect some click info, determine if stat is changing up or down
         [ones, mod] = statUpDown(event.target.innerHTML);
+        //change the stat component by our calculated val of 1 or -1
         setStr(str + ones);
-        skill = Math.floor((str - 10 - mod) / 2);
-        if (strSkill >= 0) {
-          setStrSkill("+" + skill);
-        } else {
-          setStrSkill(skill);
-        }
+        let skillMod = calculateMod(str, mod);
+
+        //check to see if the modifier has changed
+        //if it has we dispatch the change to our redux store
+        let skillChange = checkModifier(curStr, skillMod);
+        dispatch(incrementStr(skillChange));
+
+        //this also dispatches changes to all of the corresponding skills associated with the stat
+
+        //update on page element
+        let prefix = setPrefix(strSkill);
+        setStrSkill(prefix + skillMod);
 
         break;
+
       case "dex":
         [ones, mod] = statUpDown(event.target.innerHTML);
         setDex(dex + ones);
-        skill = Math.floor((dex - 10 - mod) / 2);
-        if (dexSkill >= 0) {
-          setDexSkill("+" + skill);
-        } else {
-          setDexSkill(skill);
-        }
+
+        let skillMod = calculateMod(dex, mod);
+        let skillChange = checkModifier(curDex, skillMod);
+        dispatch(incrementDex(skillChange));
+
+        let prefix = setPrefix(dexSkill);
+        setDexSkill(prefix + skillMod);
 
         break;
+
       case "con":
         [ones, mod] = statUpDown(event.target.innerHTML);
         setCon(con + ones);
-        skill = Math.floor((con - 10 - mod) / 2);
-        if (conSkill >= 0) {
-          setConSkill("+" + skill);
-        } else {
-          setConSkill(skill);
-        }
+
+        let skillMod = calculateMod(con, mod);
+        let skillChange = checkModifier(curCon, skillMod);
+        dispatch(incrementCon(skillChange));
+
+        let prefix = setPrefix(conSkill);
+        setConSkill(prefix + skillMod);
+
         break;
+
       case "int":
         [ones, mod] = statUpDown(event.target.innerHTML);
         setInt(int + ones);
-        skill = Math.floor((int - 10 - mod) / 2);
-        if (intSkill >= 0) {
-          setIntSkill("+" + skill);
-        } else {
-          setIntSkill(skill);
-        }
+
+        let skillMod = calculateMod(int, mod);
+        let skillChange = checkModifier(curInt, skillMod);
+        dispatch(incrementInt(skillChange));
+
+        let prefix = setPrefix(intSkill);
+        setIntSkill(prefix + skillMod);
+
         break;
+
       case "wis":
         [ones, mod] = statUpDown(event.target.innerHTML);
         setWis(wis + ones);
-        skill = Math.floor((wis - 10 - mod) / 2);
-        if (wisSkill >= 0) {
-          setWisSkill("+" + skill);
-        } else {
-          setWisSkill(skill);
-        }
+
+        let skillMod = calculateMod(wis, mod);
+        let skillChange = checkModifier(curWis, skillMod);
+        dispatch(incrementWis(skillChange));
+
+        let prefix = setPrefix(wisSkill);
+        setWisSkill(prefix + skillMod);
+
         break;
+
       case "cha":
         [ones, mod] = statUpDown(event.target.innerHTML);
         setCha(cha + ones);
-        skill = Math.floor((cha - 10 - mod) / 2);
-        if (chaSkill >= 0) {
-          setChaSkill("+" + skill);
-        } else {
-          setChaSkill(skill);
-        }
+
+        let skillMod = calculateMod(cha, mod);
+        let skillChange = checkModifier(curCha, skillMod);
+        dispatch(incrementCha(skillChange));
+
+        let prefix = setPrefix(chaSkill);
+        setChaSkill(prefix + skillMod);
+
         break;
     }
+  }
+
+  //modifier calculator
+  function calculateMod(num, mod) {
+    return Math.floor((num - 10 - mod) / 2);
+  }
+
+  //mostly will return 1 or -1
+  function checkModifier(oldMod, newMod) {
+    return newMod - oldMod;
+  }
+
+  function setPrefix(num) {
+    if (num >= 0) {
+      return "+";
+    }
+    return "";
   }
 
   function statUpDown(dir) {

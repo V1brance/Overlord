@@ -1,8 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
-import skillModReducer from "../features/skillMod/skillModSlice";
+
+//stat imports
+import strModReducer from "../features/skillMods/strMod";
+import dexModReducer from "../features/skillMods/dexMod";
+
+//skill imports
+//str
+import strSaveReducer from "../features/skillMods/strSkills/strSave";
+import athleticsReducer from "../features/skillMods/strSkills/athletics";
 
 export default configureStore({
   reducer: {
-    skillMod: skillModReducer,
+    strSkillMod: strModReducer,
+    strSave: strSaveReducer,
+    athletics: athleticsReducer,
+    dexSkillMod: dexModReducer,
   },
 });

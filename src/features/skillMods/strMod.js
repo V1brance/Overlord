@@ -4,25 +4,21 @@ import { createSlice } from "@reduxjs/toolkit";
 //so i think that I will move the skills component to the features here and then when the skills are updated or
 //the proficiency changes, I will dispatch a reducer to modify this page
 
-export const skillModSlice = createSlice({
-  name: "skillMod",
+export const strSkillMod = createSlice({
+  name: "strSkillMod",
   initialState: {
-    value: 10,
+    value: 0,
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    changeStrMod: (state, action) => {
+      state.value = action.payload;
     },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
+    incrementStr: (state, action) => {
       state.value += action.payload;
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } =
-  skillModSlice.actions;
-
-export default skillModSlice.reducer;
+export const { changeStrMod, incrementStr } = strSkillMod.actions;
+export const selectStrMod = (state) => state.strSkillMod.value;
+export default strSkillMod.reducer;
