@@ -17,4 +17,4 @@ export const dexSkillMod = createSlice({
 
 export const { changeDexMod, incrementDex } = dexSkillMod.actions;
 export default dexSkillMod.reducer;
-export const selectDexMod = (state) => state.dexSkillMod;
+export const selectDexMod = (state) => state.dexSkillMod.value;

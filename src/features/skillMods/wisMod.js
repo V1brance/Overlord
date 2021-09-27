@@ -17,4 +17,4 @@ export const wisSkillMod = createSlice({
 
 export const { changeWisMod } = wisSkillMod.actions;
 export default wisSkillMod.reducer;
-export const selectWisMod = (state) => state.wisSkillMod;
+export const selectWisMod = (state) => state.wisSkillMod.value;

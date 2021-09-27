@@ -17,4 +17,4 @@ export const chaSkillMod = createSlice({
 
 export const { changeChaMod, incrementCha } = chaSkillMod.actions;
 export default chaSkillMod.reducer;
-export const selectChaMod = (state) => state.chaSkillMod;
+export const selectChaMod = (state) => state.chaSkillMod.value;

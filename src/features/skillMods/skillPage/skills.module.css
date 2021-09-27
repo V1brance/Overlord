@@ -42,6 +42,7 @@
   font-weight: bold;
   font-size: 20px;
   margin: 10px 20px;
+  text-decoration: underline;
 }
 
 .areaLabel {
@@ -51,4 +52,23 @@
   font-size: 35px;
   margin: 0;
   padding: 0;
+}
+
+.profMod {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid goldenrod;
+}
+
+.profMod[data-prof="false"] {
+  background-color: white;
+}
+
+.profMod[data-prof="proficient"] {
+  background-color: black;
+}
+
+.profMod[data-prof="expert"] {
+  background-color: goldenrod;
 }

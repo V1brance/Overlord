@@ -28,8 +28,17 @@ import {
 } from "../../../../src/features/skillMods/wisMod";
 
 //import statements for skills
+//str
+import { incrementStrSave } from "../../../../src/features/skillMods/strSkills/strSave";
+import { incrementAthletics } from "../../../../src/features/skillMods/strSkills/athletics";
+//dex
+import { incrementDexSave } from "../../../../src/features/skillMods/dexSkills/dexSave";
+import { incrementAcrobatics } from "../../../../src/features/skillMods/dexSkills/acrobatics";
+import { incrementSleight } from "../../../../src/features/skillMods/dexSkills/sleight";
+import { incrementStealth } from "../../../../src/features/skillMods/dexSkills/stealth";
 
 import styles from "./stats.module.css";
+import { incrementConSave } from "../../../../src/features/skillMods/conSkills/conSave";
 
 export default function Stats() {
   const dispatch = useDispatch();
@@ -116,7 +125,9 @@ export default function Stats() {
     //variable declarations
     let ones;
     let mod;
-    let skill;
+    let skillMod;
+    let skillChange;
+    let prefix;
 
     //switch case on the stat we grabbed off the element
     //rework in progress, trying to abstractify some of this
@@ -128,17 +139,19 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         //change the stat component by our calculated val of 1 or -1
         setStr(str + ones);
-        let skillMod = calculateMod(str, mod);
+        skillMod = calculateMod(str, mod);
 
         //check to see if the modifier has changed
         //if it has we dispatch the change to our redux store
-        let skillChange = checkModifier(curStr, skillMod);
+        skillChange = checkModifier(curStr, skillMod);
         dispatch(incrementStr(skillChange));
 
         //this also dispatches changes to all of the corresponding skills associated with the stat
+        dispatch(incrementStrSave(skillChange));
+        dispatch(incrementAthletics(skillChange));
 
         //update on page element
-        let prefix = setPrefix(strSkill);
+        prefix = setPrefix(strSkill);
         setStrSkill(prefix + skillMod);
 
         break;
@@ -147,11 +160,17 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         setDex(dex + ones);
 
-        let skillMod = calculateMod(dex, mod);
-        let skillChange = checkModifier(curDex, skillMod);
+        skillMod = calculateMod(dex, mod);
+        skillChange = checkModifier(curDex, skillMod);
+
         dispatch(incrementDex(skillChange));
 
-        let prefix = setPrefix(dexSkill);
+        dispatch(incrementDexSave(skillChange));
+        dispatch(incrementAcrobatics(skillChange));
+        dispatch(incrementSleight(skillChange));
+        dispatch(incrementStealth(skillChange));
+
+        prefix = setPrefix(dexSkill);
         setDexSkill(prefix + skillMod);
 
         break;
@@ -160,11 +179,13 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         setCon(con + ones);
 
-        let skillMod = calculateMod(con, mod);
-        let skillChange = checkModifier(curCon, skillMod);
+        skillMod = calculateMod(con, mod);
+        skillChange = checkModifier(curCon, skillMod);
         dispatch(incrementCon(skillChange));
 
-        let prefix = setPrefix(conSkill);
+        dispatch(incrementConSave(skillChange));
+
+        prefix = setPrefix(conSkill);
         setConSkill(prefix + skillMod);
 
         break;
@@ -173,11 +194,11 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         setInt(int + ones);
 
-        let skillMod = calculateMod(int, mod);
-        let skillChange = checkModifier(curInt, skillMod);
+        skillMod = calculateMod(int, mod);
+        skillChange = checkModifier(curInt, skillMod);
         dispatch(incrementInt(skillChange));
 
-        let prefix = setPrefix(intSkill);
+        prefix = setPrefix(intSkill);
         setIntSkill(prefix + skillMod);
 
         break;
@@ -186,11 +207,11 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         setWis(wis + ones);
 
-        let skillMod = calculateMod(wis, mod);
-        let skillChange = checkModifier(curWis, skillMod);
+        skillMod = calculateMod(wis, mod);
+        skillChange = checkModifier(curWis, skillMod);
         dispatch(incrementWis(skillChange));
 
-        let prefix = setPrefix(wisSkill);
+        prefix = setPrefix(wisSkill);
         setWisSkill(prefix + skillMod);
 
         break;
@@ -199,11 +220,11 @@ export default function Stats() {
         [ones, mod] = statUpDown(event.target.innerHTML);
         setCha(cha + ones);
 
-        let skillMod = calculateMod(cha, mod);
-        let skillChange = checkModifier(curCha, skillMod);
+        skillMod = calculateMod(cha, mod);
+        skillChange = checkModifier(curCha, skillMod);
         dispatch(incrementCha(skillChange));
 
-        let prefix = setPrefix(chaSkill);
+        prefix = setPrefix(chaSkill);
         setChaSkill(prefix + skillMod);
 
         break;

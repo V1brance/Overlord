@@ -17,4 +17,4 @@ export const intSkillMod = createSlice({
 
 export const { changeIntMod, incrementInt } = intSkillMod.actions;
 export default intSkillMod.reducer;
-export const selectIntMod = (state) => state.intSkillMod;
+export const selectIntMod = (state) => state.intSkillMod.value;

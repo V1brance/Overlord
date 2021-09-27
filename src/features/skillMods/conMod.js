@@ -17,4 +17,4 @@ export const conSkillMod = createSlice({
 
 export const { changeConMod, incrementCon } = conSkillMod.actions;
 export default conSkillMod.reducer;
-export const selectConMod = (state) => state.conSkillMod;
+export const selectConMod = (state) => state.conSkillMod.value;

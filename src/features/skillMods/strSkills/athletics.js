@@ -9,15 +9,12 @@ export const athletics = createSlice({
     changeAthletics: (state, action) => {
       state.value = action.payload;
     },
-    incrementByAmount: (state, action) => {
+    incrementAthletics: (state, action) => {
       state.value += action.payload;
-    },
-    decrementByAmount: (state, action) => {
-      state.value -= action.payload;
     },
   },
 });
 
-export const { changeAthletics } = athletics.actions;
+export const { changeAthletics, incrementAthletics } = athletics.actions;
 export const selectAthletics = (state) => state.athletics.value;
 export default athletics.reducer;
