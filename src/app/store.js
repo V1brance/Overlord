@@ -19,6 +19,16 @@ import sleightReducer from "../features/skillMods/dexSkills/sleight";
 import stealthReducer from "../features/skillMods/dexSkills/stealth";
 //con
 import conSaveReducer from "../features/skillMods/conSkills/conSave";
+//int
+
+//wis
+
+//cha
+import chaSaveReducer from "../features/skillMods/chaSkills/chaSave";
+import deceptionReducer from "../features/skillMods/chaSkills/deception";
+import intimidationReducer from "../features/skillMods/chaSkills/intimidation";
+import performanceReducer from "../features/skillMods/chaSkills/performance";
+import persuasionReducer from "../features/skillMods/chaSkills/persuasion";
 
 export default configureStore({
   reducer: {

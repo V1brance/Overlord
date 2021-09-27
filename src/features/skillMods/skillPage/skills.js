@@ -196,7 +196,9 @@ export default function Skills() {
             <p className={styles.skillMod} id="con-save" data-stat="con">
               {conSave}
             </p>
-            <p>Saving Throw</p>
+            <p>
+              <strong>Saving Throw</strong>
+            </p>
           </div>
         </div>
       </div>
