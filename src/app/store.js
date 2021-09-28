@@ -20,9 +20,19 @@ import stealthReducer from "../features/skillMods/dexSkills/stealth";
 //con
 import conSaveReducer from "../features/skillMods/conSkills/conSave";
 //int
-
+import intSaveReducer from "../features/skillMods/intSkills/intSave";
+import arcanaReducer from "../features/skillMods/intSkills/arcana";
+import historyReducer from "../features/skillMods/intSkills/history";
+import investigationReducer from "../features/skillMods/intSkills/investigation";
+import natureReducer from "../features/skillMods/intSkills/nature";
+import religionReducer from "../features/skillMods/intSkills/religion";
 //wis
-
+import wisSaveReducer from "../features/skillMods/wisSkills/wisSave";
+import animalReducer from "../features/skillMods/wisSkills/animal";
+import insightReducer from "../features/skillMods/wisSkills/insight";
+import medicineReducer from "../features/skillMods/wisSkills/medicine";
+import perceptionReducer from "../features/skillMods/wisSkills/perception";
+import survivalReducer from "../features/skillMods/wisSkills/survival";
 //cha
 import chaSaveReducer from "../features/skillMods/chaSkills/chaSave";
 import deceptionReducer from "../features/skillMods/chaSkills/deception";
@@ -50,11 +60,27 @@ export default configureStore({
 
     //int mod and skills
     intSkillMod: intModReducer,
+    intSave: intSaveReducer,
+    arcana: arcanaReducer,
+    history: historyReducer,
+    investigation: investigationReducer,
+    nature: natureReducer,
+    religion: religionReducer,
 
     //wis mod and skills
     wisSkillMod: wisModReducer,
-
+    wisSave: wisSaveReducer,
+    animal: animalReducer,
+    insight: insightReducer,
+    medicine: medicineReducer,
+    perception: perceptionReducer,
+    survival: survivalReducer,
     //cha mod and skill
     chaSkillMod: chaModReducer,
+    chaSave: chaSaveReducer,
+    deception: deceptionReducer,
+    intimidation: intimidationReducer,
+    performance: performanceReducer,
+    persuasion: persuasionReducer,
   },
 });

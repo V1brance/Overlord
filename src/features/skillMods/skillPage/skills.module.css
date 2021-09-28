@@ -5,15 +5,24 @@
   margin-left: 60px;
 }
 
-.statSkillArea,
 .strSkills,
-.dexSkills {
+.dexSkills,
+.conSkills,
+.intSkills {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   border-bottom: 1px solid goldenrod;
   height: 200px;
+}
+
+.conSkills {
+  height: 70px;
+}
+
+.intSkills {
+  height: 160px;
 }
 
 .statDisp {

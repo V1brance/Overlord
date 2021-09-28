@@ -36,9 +36,28 @@ import { incrementDexSave } from "../../../../src/features/skillMods/dexSkills/d
 import { incrementAcrobatics } from "../../../../src/features/skillMods/dexSkills/acrobatics";
 import { incrementSleight } from "../../../../src/features/skillMods/dexSkills/sleight";
 import { incrementStealth } from "../../../../src/features/skillMods/dexSkills/stealth";
+//con
+import { incrementConSave } from "../../../../src/features/skillMods/conSkills/conSave";
+//int
+import { incrementIntSave } from "../../../../src/features/skillMods/intSkills/intSave";
+import { incrementArcana } from "../../../../src/features/skillMods/intSkills/arcana";
+import { incrementHistory } from "../../../../src/features/skillMods/intSkills/history";
+import { incrementInvestigation } from "../../../../src/features/skillMods/intSkills/investigation";
+import { incrementNature } from "../../../../src/features/skillMods/intSkills/nature";
+import { incrementReligion } from "../../../../src/features/skillMods/intSkills/religion";
 
 import styles from "./stats.module.css";
-import { incrementConSave } from "../../../../src/features/skillMods/conSkills/conSave";
+import { incrementWisSave } from "../../../../src/features/skillMods/wisSkills/wisSave";
+import { incrementAnimal } from "../../../../src/features/skillMods/wisSkills/animal";
+import { incrementInsight } from "../../../../src/features/skillMods/wisSkills/insight";
+import { incrementMedicine } from "../../../../src/features/skillMods/wisSkills/medicine";
+import { incrementPerception } from "../../../../src/features/skillMods/wisSkills/perception";
+import { incrementSurvival } from "../../../../src/features/skillMods/wisSkills/survival";
+import { incrementChaSave } from "../../../../src/features/skillMods/chaSkills/chaSave";
+import { incrementDeception } from "../../../../src/features/skillMods/chaSkills/deception";
+import { incrementIntimidation } from "../../../../src/features/skillMods/chaSkills/intimidation";
+import { incrementPerformance } from "../../../../src/features/skillMods/chaSkills/performance";
+import { incrementPersuasion } from "../../../../src/features/skillMods/chaSkills/persuasion";
 
 export default function Stats() {
   const dispatch = useDispatch();
@@ -198,6 +217,13 @@ export default function Stats() {
         skillChange = checkModifier(curInt, skillMod);
         dispatch(incrementInt(skillChange));
 
+        dispatch(incrementIntSave(skillChange));
+        dispatch(incrementArcana(skillChange));
+        dispatch(incrementHistory(skillChange));
+        dispatch(incrementInvestigation(skillChange));
+        dispatch(incrementNature(skillChange));
+        dispatch(incrementReligion(skillChange));
+
         prefix = setPrefix(intSkill);
         setIntSkill(prefix + skillMod);
 
@@ -211,6 +237,13 @@ export default function Stats() {
         skillChange = checkModifier(curWis, skillMod);
         dispatch(incrementWis(skillChange));
 
+        dispatch(incrementWisSave(skillChange));
+        dispatch(incrementAnimal(skillChange));
+        dispatch(incrementInsight(skillChange));
+        dispatch(incrementMedicine(skillChange));
+        dispatch(incrementPerception(skillChange));
+        dispatch(incrementSurvival(skillChange));
+
         prefix = setPrefix(wisSkill);
         setWisSkill(prefix + skillMod);
 
@@ -223,6 +256,12 @@ export default function Stats() {
         skillMod = calculateMod(cha, mod);
         skillChange = checkModifier(curCha, skillMod);
         dispatch(incrementCha(skillChange));
+
+        dispatch(incrementChaSave(skillChange));
+        dispatch(incrementDeception(skillChange));
+        dispatch(incrementIntimidation(skillChange));
+        dispatch(incrementPerformance(skillChange));
+        dispatch(incrementPersuasion(skillChange));
 
         prefix = setPrefix(chaSkill);
         setChaSkill(prefix + skillMod);
