@@ -101,4 +101,4 @@ Currently: setting up a react-redux store, need some character stats to be avail
 
 ## Server
 
-- Basic Deployment 0%
+- Basic Deployment 100% [we are live!]
