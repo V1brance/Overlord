@@ -3,11 +3,13 @@
   padding: 20px 30px;
   background-color: black;
   width: 350px;
-  margin-top: 50px;
+  margin-top: 120px;
+  margin-right: 10px;
   align-items: center;
   border: 3px solid goldenrod;
   border-radius: 10px;
   box-shadow: 7px 7px 20px goldenrod;
+  height: 850px;
 }
 
 .stats * {

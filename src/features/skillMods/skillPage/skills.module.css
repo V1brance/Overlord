@@ -8,21 +8,19 @@
 .strSkills,
 .dexSkills,
 .conSkills,
-.intSkills {
+.intSkills,
+.wisSkills,
+.chaSkills {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
   border-bottom: 1px solid goldenrod;
-  height: 200px;
+  height: 160px;
 }
 
 .conSkills {
   height: 70px;
-}
-
-.intSkills {
-  height: 160px;
 }
 
 .statDisp {

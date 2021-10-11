@@ -19,7 +19,7 @@ const Login = (props) => {
   return (
     <>
       <div className={styles.formArea}>
-        <Image src={sword} width={400} height={600} />
+        <Image src={sword} width={400} height={600} alt="" />
         <h2 className={styles.loginHeader}>Login</h2>
         <form className={styles.loginForm}>
           <input

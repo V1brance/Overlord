@@ -9,7 +9,7 @@ export default function Footer() {
       <div className={styles.copyrightSection}>
         <p>©2021 Samuel Brookshire</p>
         <p>All Rights Reserved</p>
-        <p>Don't steal my work please!</p>
+        <p>Don&apos;t steal my work please!</p>
       </div>
       <div className={styles.dice}>
         <Image src={dice} width={80} height={80} alt="A d20"></Image>

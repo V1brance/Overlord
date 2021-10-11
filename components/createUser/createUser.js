@@ -9,7 +9,7 @@ const CreateUser = (props) => {
   return (
     <>
       <div className={styles.formArea}>
-        <Image src={sword} width={400} height={600} />
+        <Image src={sword} width={400} height={600} alt="" />
         <h2 className={styles.createHeader}>Create</h2>
         <form className={styles.createForm}>
           <input
@@ -48,7 +48,7 @@ const CreateUser = (props) => {
             placeholder="Confirm Email"
           />
           <label htmlFor="createEmailConfirm" className={styles.emailConfirm}>
-            This is just for password reset purposes. I won't annoy you.
+            This is just for password reset purposes. I won&apos;t annoy you.
           </label>
           <button type="submit" className={styles.submitButton}>
             Create

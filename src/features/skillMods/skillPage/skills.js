@@ -391,6 +391,163 @@ export default function Skills() {
           </div>
         </div>
       </div>
+      <p className={styles.statLabel}>Wisdom</p>
+      <div data-stat="wis">
+        <div className={styles.wisSkills}>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="wis-save"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="wis-save" data-stat="wis">
+              {wisSave}
+            </p>
+            <p>
+              <strong>Saving Throw</strong>
+            </p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="animal"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="animal" data-stat="wis">
+              {animal}
+            </p>
+            <p>Animal Handling</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="insight"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="insight" data-stat="wis">
+              {insight}
+            </p>
+            <p>Insight</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="medicine"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="medicine" data-stat="wis">
+              {medicine}
+            </p>
+            <p>Medicine</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="perception"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="perception" data-stat="wis">
+              {perception}
+            </p>
+            <p>Perception</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="survival"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="survival" data-stat="wis">
+              {survival}
+            </p>
+            <p>Survival</p>
+          </div>
+        </div>
+      </div>
+      <p className={styles.statLabel}>Charisma</p>
+      <div data-stat="cha">
+        <div className={styles.chaSkills}>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="cha-save"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="cha-save" data-stat="cha">
+              {chaSave}
+            </p>
+            <p>
+              <strong>Saving Throw</strong>
+            </p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="deception"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="deception" data-stat="cha">
+              {deception}
+            </p>
+            <p>Deception</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="intimidation"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="intimidation" data-stat="cha">
+              {intimidation}
+            </p>
+            <p>Intimidation</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="performance"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="performance" data-stat="cha">
+              {performance}
+            </p>
+            <p>Performance</p>
+          </div>
+          <div className={styles.statDisp}>
+            <input
+              type="checkbox"
+              className={styles.profMod}
+              data-prof="false"
+              data-skill="persuasion"
+              onClick={handleClick}
+            />
+            <p className={styles.skillMod} id="persuasion" data-stat="cha">
+              {persuasion}
+            </p>
+            <p>Persuasion</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ export default function Home() {
           width={200}
           height={200}
           className={styles.homeImage}
+          alt=""
         />
         <h1>OverLord</h1>
         <p>Next Gen Character Sheets</p>
@@ -18,11 +19,11 @@ export default function Home() {
       <div>
         <p className={styles.about}>
           An emphasis on clean, beautiful, interactive character sheets for your
-          favorite RPG's. Thanks for testing the beta of the site. Currently, I
-          am adding support for specific subclasses found in Dungeon's and
-          Dragon's fifth edition. Each class and to a further extent subclass in
-          5e will have a custom styled sheet to allow for maximum ease of use
-          for players.
+          favorite RPG&apos;s. Thanks for testing the beta of the site.
+          Currently, I am adding support for specific subclasses found in
+          Dungeon&apos;s and Dragon&apos;s fifth edition. Each class and to a
+          further extent subclass in 5e will have a custom styled sheet to allow
+          for maximum ease of use for players.
           <br />
           <div className={styles.smallLine}></div>
           <br />
